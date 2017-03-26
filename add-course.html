@@ -107,9 +107,50 @@
   </div>
 </nav> 
 
-<div class="container-fluid main>
+<div class="container-fluid main">
   <div class="row">
-    <div class="col-sm-8">
+   <div class="col-lg-4 col-lg-push-8 col-md-4 col-md-push-8 col-sm-4 col-sm-push-8">
+      <form>
+        <div class="form-group">
+          <label for="inputdefault" class="myLabel">نام درس</label>
+          <input class="form-control myInput" id="inputdefault" type="text">
+          <label for="sel1" class="myLabel">نوع درس</label>
+          <select class="form-control myInput">
+            <option>-- نوع درس --</option>
+            <option>اصلی</option>
+            <option>تخصصی</option>
+            <option>اختیاری</option>
+            <option>عمومی</option>
+          </select>
+          <label for="sel1" class="myLabel">تعداد واحد</label>
+          <select class="form-control myInput">
+            <option>-- تعداد واحدها --</option>
+            <option>۱</option>
+            <option>۲</option>
+            <option>۳</option>
+            <option>۴</option>
+          </select>
+          <label style="padding-top: 10px;">ارایه شده برای گروه های آموزشی</label>
+
+          <div class="checkbox">
+            <label class="myLabel"><input type="checkbox" value="">&nbsp&nbsp&nbsp&nbspگروه سخت افزار</label>
+          </div>
+          <div class="checkbox">
+            <label class="myLabel"><input type="checkbox" value="">&nbsp&nbsp&nbsp&nbspگروه نرم افزار</label>
+          </div>
+          <div class="checkbox">
+            <label class="myLabel"><input type="checkbox" value="">&nbsp&nbsp&nbsp&nbspگروه هوش مصنوعی</label>
+          </div>
+          <label class="myLabel">ظرفیت پیش فرض</label>
+            <fieldset>
+              <div class="form-group">
+                <input class="form-control myInput" type="number" value="1" min="1" max="100" />
+              </div>
+            </fieldset>
+        </div>
+      </form> 
+    </div>
+    <div class="col-lg-8 col-lg-pull-4 col-md-8 col-md-pull-4 col-sm-8 col-sm-pull-4">
       <label class="myLabel">درس های پیش نیاز</label>
       <form>
         <div class="form-group">
@@ -184,48 +225,8 @@
         </table>
       </div>
     </div>
-
-    <div class="col-sm-4">
-      <form>
-        <div class="form-group">
-          <label for="inputdefault" class="myLabel">نام درس</label>
-          <input class="form-control myInput" id="inputdefault" type="text">
-          <label for="sel1" class="myLabel">نوع درس</label>
-          <select class="form-control myInput">
-            <option>-- نوع درس --</option>
-            <option>اصلی</option>
-            <option>تخصصی</option>
-            <option>اختیاری</option>
-            <option>عمومی</option>
-          </select>
-          <label for="sel1" class="myLabel">تعداد واحد</label>
-          <select class="form-control myInput">
-            <option>-- تعداد واحدها --</option>
-            <option>۱</option>
-            <option>۲</option>
-            <option>۳</option>
-            <option>۴</option>
-          </select>
-          <label style="padding-top: 10px;">ارایه شده برای گروه های آموزشی</label>
-
-          <div class="checkbox">
-            <label class="myLabel"><input type="checkbox" value="">&nbsp&nbsp&nbsp&nbspگروه سخت افزار</label>
-          </div>
-          <div class="checkbox">
-            <label class="myLabel"><input type="checkbox" value="">&nbsp&nbsp&nbsp&nbspگروه نرم افزار</label>
-          </div>
-          <div class="checkbox">
-            <label class="myLabel"><input type="checkbox" value="">&nbsp&nbsp&nbsp&nbspگروه هوش مصنوعی</label>
-          </div>
-          <label class="myLabel">ظرفیت پیش فرض</label>
-            <fieldset>
-              <div class="form-group">
-                <input class="form-control myInput" type="number" value="1" min="1" max="100" />
-              </div>
-            </fieldset>
-        </div>
-      </form> 
-    </div>
+   
+    
   </div>
 </div>
 <div class="container-fluid">
