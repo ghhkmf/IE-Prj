@@ -3,106 +3,55 @@
 <html dir="rtl" lang="fa">
 <head>
   <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-  <script src="jquery.min.js"></script>
-  <script src="bootstrap.min.js"></script>
-  <link rel="stylesheet" href="/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="bootstrap.min.css">
+<link rel="stylesheet" href="./bootstrap.min.css">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script type='text/javascript'
+  src='http://code.jquery.com/jquery-1.10.1.js'></script>
 
 
- <style type="text/css">
- #addCourse{
-  align-content: center;
-  text-align: center;
-  width: 50%;
-  height: 50px;
-  margin: 15px 25%;
- }
-.myLabel{
-  padding: 10px 0px;
-}
-.myInput{
-  width: 240px;
-}
-.myTable{
-  padding: 1% 0px;
-}
+<link rel="stylesheet" type="text/css"
+  href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 
-.myButton{
-  margin-top: 15px;
-  margin-left: 15px;
-}
+<link rel="stylesheet" type="text/css"
+  href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <link rel="stylesheet" href="css/fontStyle.css">
+  <link rel="stylesheet" href="css/myStyles.css">
+  <script src="js/redirect.js"></script>
+  <script src="js/table.js"></script>
 
- .table td {
-   text-align: center;   
-}
-.table th {
-   text-align: center;   
-}
-   #mySlider{
-  padding-bottom: 15px;
-  padding-top: 15px;
-
-}
-
-
-.carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-      width: 80%;
-      margin: auto;
-  }
-  
-  .sliderimage{
-    height: 390px;
-    max-height: 390px;
-    object-fit: cover;
-  }
-
-
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;    
-    }
-    footer .glyphicon {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
- </style>
+ 
 </head>
 <body>
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">   
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">لیست دانشجویان کلاس ها</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">ترم<span class="caret"></span></a>
+      <li><a href="grade.html">اعلام نمره</a></li>
+      <li><a href="studentslist.html">لیست دانشجویان کلاس ها</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">ترم<span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#" style="float: right;">تعریف ترم</a></li>
-          <li><a href="#" style="float: right;">ویرایش اطلاعات ترم</a></li>
+          <li><a href="add-term.html" style="float: right;">تعریف ترم</a></li>
+          <li><a href="edit-term.html" style="float: right;">ویرایش اطلاعات ترم</a></li>
         </ul>
       </li>
-       <li class="dropdown active"><a class="dropdown-toggle" data-toggle="dropdown" href="#">درس ها<span class="caret"></span></a>
+       <li class="dropdown active"><a class="dropdown-toggle" data-toggle="dropdown">درس ها<span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li class="active"><a href="#" style="float: right;">تعریف درس</a></li>
-          <li><a href="#" style="float: right;">ویرایش اطلاعات درس</a></li>
+          <li class="active"><a style="float: right;">تعریف درس</a></li>
+          <li><a href="edit-course.html" style="float: right;">مشاهده و ویرایش اطلاعات درس</a></li>
         </ul>
       </li>
-      <li class=""><a href="#">صفحه اصلی</a></li>
+      <li class=""><a href="manager.html">صفحه اصلی</a></li>
 
       <div class="navbar-header">
-      <a class="navbar-brand" href="#">پورتال دانشجویان دانشکده علوم و مهندسی کامپیوتر</a>
+      <a class="navbar-brand">پورتال دانشجویان دانشکده علوم و مهندسی کامپیوتر</a>
     </div>
     </ul>
      <ul class="nav navbar-nav">
         <li><a href="login.html">خروج <span class="glyphicon glyphicon-log-in"></span> </a></li>
-        <li><a href="#">حساب کاربری <span class="glyphicon glyphicon-user"></span></a></li>
+        <li><a href="edit-info.html">حساب کاربری <span class="glyphicon glyphicon-user"></span></a></li>
       </ul>
   </div>
 </nav> 
@@ -113,6 +62,8 @@
       <form>
         <div class="form-group">
           <label for="inputdefault" class="myLabel">نام درس</label>
+          <input class="form-control myInput" id="inputdefault" type="text">
+          <label for="inputdefault" class="myLabel">کد درس</label>
           <input class="form-control myInput" id="inputdefault" type="text">
           <label for="sel1" class="myLabel">نوع درس</label>
           <select class="form-control myInput">
@@ -160,13 +111,12 @@
             <option>مدار منطقی</option>
             <option>مهندسی نرم افزار ۱</option>
           </select>
-          <span>
-            <button type="button" class="btn myButton">افزودن</button><button type="button" class="btn myButton">حذف</button>
-          </span>
+            
+          <button type="button" class="btn myButton">افزودن</button>
         </div>
       </form>
       <div class="table-responsive myTable">          
-        <table class="table">
+        <table class="table table-hover" id="morePriority">
           <thead>
           <tr>
             <th></th>
@@ -174,6 +124,7 @@
             <th>نوع درس</th>
             <th>واحد</th>
             <th>گروه</th>
+            <th>حذف</th>
           </tr>
           </thead>
           <tbody>
@@ -183,6 +134,13 @@
             <td>اصلی</td>
             <td>۳</td>
             <td>نرم افزار - سخت افزار</td>
+            <td>
+          <button title="" type="button"
+            class="btn btn-danger remove show_tip"
+            data-original-title="Remove from list">
+            <i class="fa fa-trash-o"></i>
+          </button>
+        </td>
           </tr>
           </tbody>
         </table>
@@ -196,14 +154,14 @@
             <option>مدار منطقی</option>
             <option>مهندسی نرم افزار ۱</option>
           </select>
-          <span>
-            <button type="button" class="btn myButton">افزودن</button><button type="button" class="btn myButton">حذف</button>
-          </span>
+          
+            <button type="button" class="btn myButton">افزودن</button>
+          
         </div>
       </form>
 
       <div class="table-responsive myTable">          
-        <table class="table">
+        <table class="table table-hover" id="samePriority">
         <thead>
         <tr>
           <th></th>
@@ -211,6 +169,7 @@
           <th>نوع درس</th>
           <th>واحد</th>
           <th>گروه</th>
+          <th>حذف</th>
         </tr>
         </thead>
         <tbody>
@@ -220,6 +179,13 @@
           <td>اصلی</td>
           <td>۳</td>
           <td>نرم افزار - سخت افزار</td>
+          <td>
+          <button title="" type="button"
+            class="btn btn-danger remove show_tip"
+            data-original-title="Remove from list">
+            <i class="fa fa-trash-o"></i>
+          </button>
+        </td>
         </tr>
         </tbody>
         </table>
@@ -238,7 +204,7 @@
 </div>
 
 <footer class="container-fluid text-center">
-<a href="#myPage" title="To Top">
+<a href="#" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>
   <div class="container">
