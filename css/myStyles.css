@@ -1,0 +1,63 @@
+#addCourse{
+  align-content: center;
+  text-align: center;
+  width: 50%;
+  height: 50px;
+  margin: 15px 25%;
+ }
+.myLabel{
+  padding: 10px 0px;
+}
+.myInput{
+  width: 240px;
+}
+.myTable{
+  padding: 1% 0px;
+}
+
+.myButton{
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+ .table td {
+   text-align: center;   
+}
+.table th {
+   text-align: center;   
+}
+   #mySlider{
+  padding-bottom: 15px;
+  padding-top: 15px;
+
+}
+
+
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 80%;
+      margin: auto;
+  }
+  
+  .sliderimage{
+    height: 390px;
+    max-height: 390px;
+    object-fit: cover;
+  }
+
+
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;    
+    }
+    footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
