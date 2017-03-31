@@ -1,177 +1,176 @@
-
 <!DOCTYPE html>
-<html>
+<html class="full" lang="fa" dir="rtl">
+<!-- Make sure the <html> tag is set to the .full CSS class. Change the background image in the full.css file. -->
+
 <head>
-  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="jquery.min.js"></script>
-  <script src="bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="home.css">
-  <link rel="stylesheet" href="bootstrap.min.css">
 
-  <style>
- 
-/* CSS used here will be applied after bootstrap.css */
-.footerStyle
-{
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/fontStyle.css" rel="stylesheet">
+    <script type='text/javascript'
+  src='http://code.jquery.com/jquery-1.10.1.js'></script>
+
+    <!-- Custom CSS -->
+    <link href="css/the-big-picture.css" rel="stylesheet">
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<style type="text/css">
+h1{
+    font-size: 2.5rem;
 }
-#mySlider{
-  padding-bottom: 15px;
-  padding-top: 15px;
-
+h4{
+    font-size: 1.5rem;
+}
+div.slide-down {
+  width:100%;
+  overflow:hidden;
+}
+div.slide-down h1 {
+  animation: 2s slide-down;
+  margin-top:0%;
+}
+div.slide-down h4 {
+  animation: 4s slide-down;
+  margin-top:0%;
 }
 
 
-.carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-      width: 70%;
-      margin: auto;
+@keyframes slide-down {
+  from {
+    margin-top: -100%;
+    height: 300%; 
   }
-  
-  .sliderimage{
-    object-fit: fill;
+
+  to {
+    margin-top: 0%;
+    height: 100%;
   }
-.panel-default {
- opacity: 0.9;
- margin-top:30px;
-}
-.form-group.last {
- margin-bottom:0px;
-}
- footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
-footer .glyphicon {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-html,body {
-  height: 100%;
 }
 
-  </style>
+.errorClass { border:  1px solid red; }
+
+
+</style>
 </head>
 <body>
 
-<nav class="navbar navbar-inverse navbar-static-top">
-    <div class="container-fluid">
-    	<ul class="nav navbar-nav navbar-right">
-      		<div class="navbar-header">
-      			<a class="navbar-brand" href="#">پورتال دانشجویان دانشکده علوم و مهندسی کامپیوتر</a>
-      		</div>
-    	</ul>
-  	</div>
-</nav>  
-
-<div class="container-fluid">
-  <div class="row" style="height: 100%">
-    <div class="col-sm-8" style="max-height: 100%; min-height: 100%" id="mySlider">		
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-        <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-
-    <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox" style="height: 100%">
-
-          <div class="item active">
-            <img src="cs-education2.jpg" width="100%" height="100%">
-            <div class="carousel-caption">
-              <h3>دانشکده علوم و مهندسی کامپیوتر</h3>
-              <p>کتابخانه مجهز برای مطالعه دانشجویان</p>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header navbar-right" style="float: right;">
+                <a class="navbar-brand" href="#"> پورتال دانشجویان دانشکده علوم و مهندسی کامپیوتر</a>
             </div>
-          </div>
-
-          <div class="item">
-            <img src="cs-education1.jpg" width="100%" height="100%" style="min-height: 100%" class="sliderimage">
-            <div class="carousel-caption" dir="rtl">
-              <h3>دانشکده علوم و مهندسی کامپیوتر</h3>
-              <p>در دو گرایش نرم افزار و سخت افزار دانشجو می پذیرد.</p>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                   
+                </ul>
             </div>
-          </div>
-    
-          <div class="item">
-            <img src="cs-education2.jpg" width="100%" height="100%">
-            <div class="carousel-caption">
-              <h3>دانشکده علوم و مهندسی کامپیوتر</h3>
-              <p>انجمن فارغ التحصیلان</p>
-            </div>
-          </div>
-  
+            <!-- /.navbar-collapse -->
         </div>
+        <!-- /.container -->
+    </nav>
 
-    <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>                                         
-    </div>	
+    <!-- Page Content -->
+    <div class="container" align="center">
+        <div class="row" style="display: inline-block;">
+            <div class="col-md-12 col-sm-12">
+                <div class="panel panel-default" style="width: 50%; margin:20px 0;" align="right">
+                    <div class="panel-heading"> <strong class="">ورود به حساب کاربری</strong>
 
-    <div class="col-sm-4" dir="rtl">
-      <div class="panel panel-default">
-        <div class="panel-heading"> <strong class="">ورود به حساب کاربری</strong>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <div class="col-sm-9">
+                                    <input type="email" class="form-control" id="inputEmail" placeholder="پست الکترونیکی" required="">
+                                </div>
+                                <label for="inputEmail" class="col-sm-3 control-label">نام کاربری</label>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-9">
+                                    <input type="password" class="form-control" id="inputPassword" placeholder="رمز عبور" required="">
+                                </div>
+                                <label for="inputPassword" class="col-sm-3 control-label">رمز عبور</label> 
+                            </div>
+                            <div class="form-group" align="center">
+                                <div class="checkbox">
+                                    <label class="">
+                                        <input type="checkbox" class="">&nbsp &nbsp &nbsp به خاطر بسپار</label>
+                                </div>
+                            </div>
+                            <div class="form-group last" align="center">
+                                <div>
+                                    <button type="button" class="btn btn-success btn-sm" id="login" onclick="signIn()" style="width: 30%">ورود</button>
+                                    <button type="reset" class="btn btn-default btn-sm" style="width: 30%">بازنشانی</button>
+                                </div>
+                            </div>
+                        </form>
+                   </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 " align="center" style="margin: 20px 0px;">
+                <div class="slide-down">
+                <h1 style="color: white;">به پورتال دانشجویان شهید بهشتی خوش آمدید</h1>
+                <br/>
+                <h4 style="color: white;">برای استفاده از خدمات باید وارد سامانه شوید. رمز عبور پیش فرض شماره دانشجویی شما می باشد.</h4>
+                </div>
+            </div>
+        <!-- /.row -->
         </div>
-
-        <div class="panel-body">
-          <form class="form-horizontal" role="form">
-            <div class="form-group">
-              <div class="col-sm-9">
-                <input type="email" class="form-control" id="inputEmail3" placeholder="پست الکترونیکی" required="">
-              </div>
-              
-              <label for="inputEmail3" class="col-sm-3 control-label">نام کاربری</label>               
-            </div>
-            
-            <div class="form-group">
-              <div class="col-sm-9">
-                <input type="password" class="form-control" id="inputPassword3" placeholder="رمز عبور" required="">
-              </div>
-              
-              <label for="inputPassword3" class="col-sm-3 control-label">رمز عبور</label>               
-            </div>
-                       
-            <div class="form-group" align="center">
-              <div class="checkbox">
-                <label class="">
-                <input type="checkbox" class="">&nbsp &nbsp &nbsp به خاطر بسپار</label>
-              </div>
-            </div>
-            
-            <div class="form-group last" align="center">
-              <div>
-                <button type="submit" class="btn btn-success btn-sm" style="width: 30%">ورود</button>
-                <button type="reset" class="btn btn-default btn-sm" style="width: 30%">بازنشانی</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
     </div>
-  </div>
-</div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(window).load(function() {
+          localStorage.removeItem("type");
+    });
+        function signIn()
+        {
+            var email = $( "#inputEmail");
+            var password = $( "#inputPassword");
+
+            if(email.val() == "gp@sbu.ac.ir" && password.val()=="gp")
+            {
+                window.location = 'manager.html';
+                localStorage.setItem("type", "gp");
+            }
+            else
+            {
+                email.addClass("errorClass");
+                password.addClass("errorClass");
+                setTimeout(function(){
+                email.removeClass("errorClass");
+                password.removeClass("errorClass");
+
+            }, 2000);
 
 
-<footer class="container-fluid text-center">
-  <div class="container">
-            <div class="row">             
-                <nav class="col-sm-12">
-                    <h5>دانشگاه شهید بهشتی - دانشکده علوم و مهندسی کامپیوتر</h5>
-                </nav>      
-            </div> <!--/.row--> 
-  </div> <!--/.container--> 
-</footer>
+            }
+
+        }
+    </script>
 
 
 </body>
-</html>
 
+</html>
