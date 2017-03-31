@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+  <script src="jquery.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css"
+  href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <script type='text/javascript'
+  src='http://code.jquery.com/jquery-1.10.1.js'></script>
+
+  <link rel="stylesheet" href="css/fontStyle.css">
+  <link rel="stylesheet" href="css/myStyles.css">
+  <script src="js/redirect.js"></script>
+  <script src="js/table.js"></script>
+
+
+ <style type="text/css">
+
+ .myAlert{
+    margin: 20px 0px;
+    width: 100%;
+ }
+
+ </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">   
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="grade.html">اعلام نمره</a></li>
+
+      <li><a href="studentslist.html">لیست دانشجویان کلاس ها</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">ترم<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="add-term.html" style="float: right;">تعریف ترم</a></li>
+          <li><a href="edit-term.html" style="float: right;">مشاهده و ویرایش اطلاعات ترم</a></li>
+        </ul>
+      </li>
+       <li class="dropdown active"><a class="dropdown-toggle" data-toggle="dropdown">درس ها<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="add-course.html" style="float: right;">تعریف درس</a></li>
+          <li class="active"><a style="float: right;">ویرایش اطلاعات درس</a></li>
+        </ul>
+      </li>
+      <li class=""><a href="manager.html">صفحه اصلی</a></li>
+
+      <div class="navbar-header">
+      <a class="navbar-brand">پورتال دانشجویان دانشکده علوم و مهندسی کامپیوتر</a>
+    </div>
+    </ul>
+     <ul class="nav navbar-nav">
+        <li><a href="login.html">خروج <span class="glyphicon glyphicon-log-in"></span> </a></li>
+        <li><a href="edit-info.html">حساب کاربری <span class="glyphicon glyphicon-user"></span></a></li>
+      </ul>
+  </div>
+</nav> 
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="alert alert-warning fade in myAlert">
+       <strong>توجه:</strong> ابتدا درس را انتخاب نمایید. در پایان با کلیک بر دکمه «اعمال تغییرات» تغییرات را ثبت نمایید.
+      </div>
+      <label for="sel1" class="myLabel">انتخاب درس</label>
+        <select class="form-control myInput">
+          <option>-- انتخاب درس --</option>
+          <option>مهندسی اینترنت</option>
+          <option>مهندسی نرم افزار ۱</option>
+          <option>شبکه های کامپیوتری</option>
+          <option>ساختمان داده ها</option>
+        </select>  
+    </div>
+  </div>
+  <hr class="hr-text" data-content="اطلاعات درس انتخاب شده">
+ </div>
+<div class="container-fluid main">
+  <div class="row">
+   <div class="col-lg-4 col-lg-push-8 col-md-4 col-md-push-8 col-sm-4 col-sm-push-8">
+      <form>
+        <div class="form-group">
+          <label for="inputdefault" class="myLabel">نام درس</label>
+          <input class="form-control myInput" id="inputdefault" type="text">
+          <label for="inputdefault" class="myLabel">کد درس</label>
+          <input class="form-control myInput" id="inputdefault" type="text">
+          <label for="sel1" class="myLabel">نوع درس</label>
+          <select class="form-control myInput">
+            <option>-- نوع درس --</option>
+            <option>اصلی</option>
+            <option>تخصصی</option>
+            <option>اختیاری</option>
+            <option>عمومی</option>
+          </select>
+          <label for="sel1" class="myLabel">تعداد واحد</label>
+          <select class="form-control myInput">
+            <option>-- تعداد واحدها --</option>
+            <option>۱</option>
+            <option>۲</option>
+            <option>۳</option>
+            <option>۴</option>
+          </select>
+          <label style="padding-top: 10px;">ارایه شده برای گروه های آموزشی</label>
+
+          <div class="checkbox">
+            <label class="myLabel"><input type="checkbox" value="">&nbsp&nbsp&nbsp&nbspگروه سخت افزار</label>
+          </div>
+          <div class="checkbox">
+            <label class="myLabel"><input type="checkbox" value="">&nbsp&nbsp&nbsp&nbspگروه نرم افزار</label>
+          </div>
+          <div class="checkbox">
+            <label class="myLabel"><input type="checkbox" value="">&nbsp&nbsp&nbsp&nbspگروه هوش مصنوعی</label>
+          </div>
+          <label class="myLabel">ظرفیت پیش فرض</label>
+            <fieldset>
+              <div class="form-group">
+                <input class="form-control myInput" type="number" value="1" min="1" max="100" />
+              </div>
+            </fieldset>
+        </div>
+      </form> 
+    </div>
+    <div class="col-lg-8 col-lg-pull-4 col-md-8 col-md-pull-4 col-sm-8 col-sm-pull-4">
+      <label class="myLabel">درس های پیش نیاز</label>
+      <form>
+        <div class="form-group">
+          <select class="form-control myInput">
+            <option>-- نام درس --</option>
+            <option>شبکه های کامپیوتری</option>
+            <option>مدار منطقی</option>
+            <option>مهندسی نرم افزار ۱</option>
+          </select>
+          <button type="button" class="btn myButton">افزودن</button>
+        </div>
+      </form>
+      <div class="table-responsive myTable">          
+        <table class="table table-hover" id="morePriority">
+          <thead>
+          <tr>
+            <th></th>
+            <th>نام درس</th>
+            <th>نوع درس</th>
+            <th>واحد</th>
+            <th>گروه</th>
+            <th>حذف</th>
+
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>۱</td>
+            <td>شبکه های کامپیوتری</td>
+            <td>اصلی</td>
+            <td>۳</td>
+            <td>نرم افزار - سخت افزار</td>
+            <td>
+              <button title="" type="button"
+            class="btn btn-danger remove show_tip"
+            data-original-title="Remove from list">
+            <i class="fa fa-trash-o"></i>
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <label class="myLabel">درس های هم نیاز</label>
+      <form>
+        <div class="form-group">
+          <select class="form-control myInput">
+            <option>-- نام درس --</option>
+            <option>شبکه های کامپیوتری</option>
+            <option>مدار منطقی</option>
+            <option>مهندسی نرم افزار ۱</option>
+          </select>
+          <button type="button" class="btn myButton">افزودن</button>
+        </div>
+      </form>
+
+      <div class="table-responsive myTable">          
+        <table class="table table-hover" id="samePriority">
+        <thead>
+        <tr>
+          <th></th>
+          <th>نام درس</th>
+          <th>نوع درس</th>
+          <th>واحد</th>
+          <th>گروه</th>
+          <th>حذف</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>۱</td>
+          <td>شبکه های کامپیوتری</td>
+          <td>اصلی</td>
+          <td>۳</td>
+          <td>نرم افزار - سخت افزار</td>
+          <td>
+          <button title="" type="button"
+            class="btn btn-danger remove show_tip"
+            data-original-title="Remove from list">
+            <i class="fa fa-trash-o"></i>
+          </button>
+          </td>
+        </tr>
+        </tbody>
+        </table>
+      </div>
+    </div>
+   
+    
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <button type="button" class="btn" id="addCourse">اعمال تغییرات</button>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+<a href="#" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <div class="container">
+            <div class="row">
+                
+                <nav class="col-sm-12">
+                    <h5>دانشگاه شهید بهشتی - دانشکده علوم و مهندسی کامپیوتر</h5>
+                </nav>           
+            </div> <!--/.row--> 
+  </div> <!--/.container--> </footer>
+
+    
+
+</body>
+</html>
+
