@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery.min.js"></script>
+
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/fontStyle.css">
+
+  <script type='text/javascript'
+  src='http://code.jquery.com/jquery-1.10.1.js'></script>
+
+<link rel="stylesheet" type="text/css"
+  href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+<link rel="stylesheet" type="text/css"
+  href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="css/myStyles.css">
+  <script src="js/redirect.js"></script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">   
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="grade.html">اعلام نمره</a></li>
+      <li><a href="studentslist.html">لیست دانشجویان کلاس ها</a></li>      <li class="dropdown active"><a class="dropdown-toggle" data-toggle="dropdown">ترم<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a style="float: right;">تعریف ترم</a></li>
+          <li class="active"><a href="edit-term.html" style="float: right;">ویرایش اطلاعات ترم</a></li>
+        </ul>
+      </li>
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">درس ها<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="add-course.html" style="float: right;">تعریف درس</a></li>
+          <li><a href="edit-course.html" style="float: right;">مشاهده و ویرایش اطلاعات درس</a></li>
+        </ul>
+      </li>
+      <li class=""><a href="manager.html">صفحه اصلی</a></li>
+
+      <div class="navbar-header">
+      <a class="navbar-brand">پورتال دانشجویان دانشکده علوم و مهندسی کامپیوتر</a>
+    </div>
+    </ul>
+     <ul class="nav navbar-nav">
+        <li><a href="login.html">خروج <span class="glyphicon glyphicon-log-in"></span> </a></li>
+        <li><a href="edit-info.html">حساب کاربری <span class="glyphicon glyphicon-user"></span></a></li>
+      </ul>
+  </div>
+</nav> 
+
+<div class="container-fluid main">
+  <div class="row">
+   <div class="col-lg-4 col-lg-push-8 col-md-4 col-md-push-8 col-sm-4 col-sm-push-8">
+      <form>
+        <div class="form-group">
+          <span>
+            <label class="myLabel">سال</label>
+            <fieldset>
+                <input class="form-control myInput" type="text" value="1395">
+            </fieldset>
+            <label for="sel1" class="myLabel">نیمسال</label>
+            <select id="term" class="form-control myInput">
+              <option value="none">-- نیمسال --</option>
+              <option>۱</option>
+              <option>۲</option>
+            </select>
+            <div id="myDangerAlert" class="alert alert-danger fade in" style="margin: 20px 0px; width: 100%; text-align:center;">
+              <strong>توجه:</strong> ابتدا درس را انتخاب نمایید.
+            </div>
+          </span>           
+        </div>
+      </form> 
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4">
+      <label class="myLabel">نام درس</label>
+      <form>
+        <div class="form-group">
+          <select class="form-control myInput" id="selCourseName">
+            <option value="none">-- نام درس --</option>
+            <option>شبکه های کامپیوتری</option>
+            <option>مدار منطقی</option>
+            <option>مهندسی نرم افزار ۱</option>
+          </select>       
+        </div>
+      </form>
+    
+      <label class="myLabel">نام استاد</label>
+      <form>
+        <div class="form-group">
+          <select class="form-control myInput" id="selMaster">
+            <option value="none">-- نام استاد --</option>
+            <option>دکتر علی اکبری</option>
+            <option>دکتر قوامی زارده</option>
+            <option>دکتر عباسپور</option>
+          </select>
+        </div>
+      </form>
+      <label class="myLabel"">ظرفیت پیش فرض</label>
+      <fieldset>
+        <div class="form-group">
+          <input id="capacity" class="form-control myInput" type="text" value="10"/>
+        </div>
+      </fieldset>
+      <div> 
+        <label style="padding-top: 10px;">ارایه شده برای گروه های آموزشی</label>
+        <div class="radio">
+          <label><input type="radio" name="gp"> &nbsp&nbsp&nbsp&nbspنرم افزار</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="gp"> &nbsp&nbsp&nbsp&nbspسخت افزار</label>
+        </div> 
+      </div>
+    </div>
+    <div class="col-sm-4 col-sm-pull-8 col-md-4 col-md-pull-8 col-lg-4 col-lg-pull-8">
+      <div style="display: inline-flex; margin: 10px 0px;">
+      <label class="myLabel">تاریخ امتحان&nbsp&nbsp</label><br/>
+      <input id="examDay" style="width: 60px;" class="form-control" type="text" value="1" min="1" max="31" />&nbsp.&nbsp
+      <input id="examMonth" style="width: 60px;" class="form-control" type="text" value="1" min="1" max="12" />&nbsp.&nbsp
+      <input id="examYear" style="width: 70px;" class="form-control" type="text" value="1395" min="1395" max="1450"/>
+      </div>
+       <div>
+        <div style="display: inline-flex; margin: 10px 0px;">
+          <label class="myLabel">ساعت امتحان&nbsp&nbsp</label><br/>
+          <input id="examMiunte" style="width: 60px;" class="form-control" type="text" value="0" min="00" max="59" />&nbsp:&nbsp
+          <input id="examHour" style="width: 60px;" class="form-control" type="text" value="6" min="6" max="20" />&nbsp&nbsp
+        </div>
+      </div> 
+      
+      <label class="myLabel">روزهای کلاس</label>
+      <div>
+        <div class="checkbox-inline">
+          <label class="myLabel" for="satVal"><input id="sat" type="checkbox" value="">&nbsp&nbsp&nbsp&nbspشنبه</label>
+        </div>
+
+        <div class="checkbox-inline">
+          <label class="myLabel" for="sunVal"><input id="sun" type="checkbox" value="">&nbsp&nbsp&nbsp&nbspیکشنبه</label>
+        </div>
+        <div class="checkbox-inline">
+          <label class="myLabel" for="monVal"><input id="mon" type="checkbox" value="">&nbsp&nbsp&nbsp&nbspدوشنبه</label>
+        </div>
+      </div>
+      <div class="checkbox-inline">
+        <label class="myLabel" for="tueVal"><input id="tue" type="checkbox" value="">&nbsp&nbsp&nbsp&nbspسه شنبه</label>
+      </div>
+      <div class="checkbox-inline">
+         <label class="myLabel" for="wedVal"><input id="wed" type="checkbox" value="">&nbsp&nbsp&nbsp&nbspچهارشنبه</label>
+      </div>
+      <div>
+        <div style="display: inline-flex; margin: 10px 0px;">
+          <label class="myLabel">شروع&nbsp&nbsp</label><br/>
+          <input id="startminute" style="width: 60px;" class="form-control" type="text" value="00" min="00" max="59" />&nbsp:
+          &nbsp
+          <input id="starthour" style="width: 60px;" class="form-control" type="text" value="6" min="6" max="20" />&nbsp&nbsp
+        </div>
+        <div style="display: inline-flex;">
+        <label class="myLabel">پایان&nbsp&nbsp</label><br/>
+          <input id="endminute" style="width: 60px;" class="form-control" type="text" value="00" min="00" max="59" />&nbsp:&nbsp
+          <input id="endhour" style="width: 60px;" class="form-control" type="text" value="6" min="6" max="20" />&nbsp&nbsp
+          </div>
+      </div>
+     <button type="button" class="btn myButton" onclick="addCourse()">افزودن درس</button>
+    </div>
+   
+    
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+    <div class="table-responsive myTable">          
+        <table class="table" id="termTable">
+        <thead>
+        <tr>
+          <th></th>
+          <th>نام درس</th>
+          <th>کد درس</th>
+          <th>گروه درسی</th>
+          <th>نوع درس</th>
+          <th>نام استاد</th>
+          <th>روزهای کلاس</th>
+          <th>ساعت</th>
+          <th>امتحان</th>
+          <th>ظرفیت</th>
+          <th>گروه</th>
+          <th>حذف</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        
+        </tbody>
+        </table>
+      </div>
+
+      <button type="button" class="btn" id="addCourse" onclick="addNewTerm()">افزودن ترم</button>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+<a href="#" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <div class="container">
+            <div class="row">
+                
+                <nav class="col-sm-12">
+                    <h5>دانشگاه شهید بهشتی - دانشکده علوم و مهندسی کامپیوتر</h5>
+                </nav>           
+            </div> <!--/.row--> 
+  </div> <!--/.container--> </footer>
+<script type="text/javascript">
+ $(window).load(function(){
+         $( "#myDangerAlert").hide();
+$(function () {
+    $("table#termTable").on("click", ".remove", function () {
+        $(this).closest('tr').remove();
+    });
+});
+});
+  function addCourse(){
+    var table = document.getElementById("termTable");
+    var courseName = $( "#selCourseName option:selected");
+    var masterName = $( "#selMaster option:selected");
+    var saturday = $( "#sat");
+    var sunday = $( "#sun");
+    var monday = $( "#mon");
+    var tuesday = $( "#tue");
+    var wednesday = $( "#wed");
+    var sminute = $( "#startminute");
+    var shour = $( "#starthour");
+    var ehour = $( "#endhour");
+    var emintue = $( "#endminute");
+    var classcapacity = $( "#capacity");
+    var courseGroup = $('input[name=gp]:checked');
+    var examD = $( "#examDay");
+    var examM = $( "#examMonth");
+    var examY = $( "#examYear");
+    var examMin = $( "#examMiunte");
+    var examHour = $( "#examHour");
+
+    if(courseName.val() != "none" && masterName.val() != "none" && ((saturday.prop("checked")==true) || (sunday.prop("checked")==true) || (monday.prop("checked")==true) || (tuesday.prop("checked")==true) || (wednesday.prop("checked")==true)) && shour.val()!="" && sminute.val()!= "" && classcapacity.val()!="" && courseGroup.val() && (examD.val()!="") && (examM.val()!="") && (examY.val()!="") && (examHour.val()!="") && (examMin.val()!="")) 
+    {
+      var row = table.insertRow(-1);
+      var no = row.insertCell(0);
+      var course = row.insertCell(1);
+      var coursecode = row.insertCell(2);
+      var gpcode = row.insertCell(3);
+      var coursetype = row.insertCell(4);
+      var master = row.insertCell(5);
+      var days = row.insertCell(6);
+      var time = row.insertCell(7);
+      var exam = row.insertCell(8);
+      var capacity = row.insertCell(9);
+      var group = row.insertCell(10);
+      var remove = row.insertCell(11);
+
+      if(saturday.prop("checked")==true)
+        days.innerHTML += $("label[for=satVal]").text();
+      if(sunday.prop("checked")==true)
+        days.innerHTML += $("label[for=sunVal]").text();
+      if(monday.prop("checked"))
+        days.innerHTML += $("label[for=monVal]").text();
+      if(tuesday.prop("checked")==true)
+        days.innerHTML += $("label[for=tueVal]").text();
+      if(wednesday.prop("checked")==true)
+        days.innerHTML += $("label[for=wedVal]").text();
+
+      no.innerHTML = table.rows.length-1;
+      course.innerHTML = courseName.text();
+      coursecode.innerHTML = "-";
+      gpcode.innerHTML = table.rows.length-1;
+      coursetype.innerHTML = "-";
+      master.innerHTML = masterName.text();
+      time.innerHTML = shour.val() + ":" + sminute.val() + " تا "+ ehour.val() + ":" + emintue.val();
+      capacity.innerHTML = classcapacity.val();
+      group.innerHTML = courseGroup.closest('label').text();
+      exam.innerHTML = examY.val()+"/"+examM.val()+"/"+examD.val()+ " - " + examHour.val() + ":" + examMin.val(); 
+
+      var removeB = document.createElement("button");
+      removeB.className="btn btn-danger remove show_tip";
+      var trash = document.createElement("i");
+      trash.className="fa fa-trash-o";
+      removeB.appendChild(trash);
+      remove.appendChild(removeB);
+    }
+  }
+  function addNewTerm()
+  {
+    var nimsal = $( "#term");
+    if(nimsal.val() == "none")
+    {
+       $( "#myDangerAlert").show();
+    }
+    else{
+      $( "#myDangerAlert").hide();
+    }
+
+  }
+</script>
+</body>
+</html>
+

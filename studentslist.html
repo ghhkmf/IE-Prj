@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery.min.js"></script>
+
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script type='text/javascript'
+  src='http://code.jquery.com/jquery-1.10.1.js'></script>
+
+<link rel="stylesheet" type="text/css"
+  href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+<link rel="stylesheet" type="text/css"
+  href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
+ <link rel="stylesheet" href="css/fontStyle.css">
+ <link rel="stylesheet" href="css/myStyles.css">
+
+  <script src="js/redirect.js"></script>
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">   
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="grade.html">اعلام نمره</a></li>
+
+      <li class="active"><a>لیست دانشجویان کلاس ها</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">ترم<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="add-term.html" style="float: right;">تعریف ترم</a></li>
+          <li><a href="edit-term.html" style="float: right;">ویرایش اطلاعات ترم</a></li>
+        </ul>
+      </li>
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"">درس ها<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="add-course.html" style="float: right;">تعریف درس</a></li>
+          <li><a href="edit-course.html" style="float: right;">مشاهده و ویرایش اطلاعات درس</a></li>
+        </ul>
+      </li>
+      <li class=""><a href="#">صفحه اصلی</a></li>
+
+      <div class="navbar-header">
+      <a class="navbar-brand">پورتال دانشجویان دانشکده علوم و مهندسی کامپیوتر</a>
+    </div>
+    </ul>
+     <ul class="nav navbar-nav">
+        <li><a href="login.html">خروج <span class="glyphicon glyphicon-log-in"></span> </a></li>
+        <li><a href="edit-info.html">حساب کاربری <span class="glyphicon glyphicon-user"></span></a></li>
+      </ul>
+  </div>
+</nav> 
+
+<div class="container-fluid main">
+  <div class="row">
+    <div class="col-lg-4 col-lg-push-8 col-md-4 col-md-push-8 col-sm-4 col-sm-push-8">
+      <form>
+        <div class="form-group" style="padding-top: 10px;">
+          <span>
+            <label><input type="radio" name="courseMaster" checked=""> &nbspدرس های من&nbsp&nbsp</label>
+            <label><input type="radio" name="courseMaster"> &nbspکلیه درس ها&nbsp&nbsp</label>
+            </span>
+        </div>
+        <div class="form-group">
+          <label for="sel1" class="myLabel">شماره ترم</label>
+          <select id="term" class="form-control myInput">
+            <option value="none">-- ترم --</option>
+            <option>۱</option>
+            <option>۲</option>
+          </select>
+          <label class="myLabel">نام درس</label>
+          <select class="form-control myInput" id="selCourseName">
+            <option value="none">-- نام درس --</option>
+            <option>شبکه های کامپیوتری</option>
+            <option>مدار منطقی</option>
+            <option>مهندسی نرم افزار ۱</option>
+          </select>       
+          <label class="myLabel">گروه</label>
+          <select class="form-control myInput" id="selMaster">
+            <option value="none">-- گروه --</option>
+            <option>۱</option>
+            <option>۲</option>
+            <option>۳</option>
+          </select>
+          <label class="myLabel">نام استاد</label>
+          <select class="form-control myInput" id="selMaster">
+            <option value="none">-- نام استاد --</option>
+            <option>دکتر علی اکبری</option>
+            <option>دکتر قوامی زارده</option>
+            <option>دکتر عباسپور</option>
+          </select>
+        </div>
+      </form> 
+    </div>
+    <div class="col-sm-8 col-sm-pull-4 col-md-8 col-md-pull-4 col-lg-8 col-lg-pull-4">
+      <div style="display: inline-flex; margin: 10px 0px;">
+      <label class="myLabel">تاریخ امتحان&nbsp&nbsp</label><br/>
+      <input id="examDay" style="width: 60px;" class="form-control" type="text" value="1" min="1" max="31" />&nbsp.&nbsp
+      <input id="examMonth" style="width: 60px;" class="form-control" type="text" value="1" min="1" max="12" />&nbsp.&nbsp
+      <input id="examYear" style="width: 70px;" class="form-control" type="text" value="1395" min="1395" max="1450"/>
+      </div>
+      <div>
+        <div style="display: inline-flex; margin: 10px 0px;">
+          <label class="myLabel">ساعت امتحان&nbsp&nbsp</label><br/>
+          <input id="examMiunte" style="width: 60px;" class="form-control" type="text" value="0" min="00" max="59" />&nbsp:&nbsp
+          <input id="examHour" style="width: 60px;" class="form-control" type="text" value="6" min="6" max="20" />&nbsp&nbsp
+        </div>
+      </div> 
+      
+      <label class="myLabel">روزهای کلاس</label>
+      <div>
+        <div class="checkbox-inline">
+          <label class="myLabel" for="satVal"><input id="sat" type="checkbox" value="">&nbsp&nbsp&nbsp&nbspشنبه</label>
+        </div>
+
+        <div class="checkbox-inline">
+          <label class="myLabel" for="sunVal"><input id="sun" type="checkbox" value="">&nbsp&nbsp&nbsp&nbspیکشنبه</label>
+        </div>
+        <div class="checkbox-inline">
+          <label class="myLabel" for="monVal"><input id="mon" type="checkbox" value="">&nbsp&nbsp&nbsp&nbspدوشنبه</label>
+        </div>
+      </div>
+      <div class="checkbox-inline">
+        <label class="myLabel" for="tueVal"><input id="tue" type="checkbox" value="">&nbsp&nbsp&nbsp&nbspسه شنبه</label>
+      </div>
+      <div class="checkbox-inline">
+         <label class="myLabel" for="wedVal"><input id="wed" type="checkbox" value="">&nbsp&nbsp&nbsp&nbspچهارشنبه</label>
+      </div>
+      <div>
+        <div style="display: inline-flex; margin: 10px 0px;">
+          <label class="myLabel">شروع&nbsp&nbsp</label><br/>
+          <input id="startminute" style="width: 60px;" class="form-control" type="text" value="00" min="00" max="59" />&nbsp:
+          &nbsp
+          <input id="starthour" style="width: 60px;" class="form-control" type="text" value="6" min="6" max="20" />&nbsp&nbsp
+        </div>
+        <div style="display: inline-flex;">
+        <label class="myLabel">پایان&nbsp&nbsp</label><br/>
+          <input id="endminute" style="width: 60px;" class="form-control" type="text" value="00" min="00" max="59" />&nbsp:&nbsp
+          <input id="endhour" style="width: 60px;" class="form-control" type="text" value="6" min="6" max="20" />&nbsp&nbsp
+        </div>
+      </div>
+       <div style="display: inline-flex;">
+        <label class="myLabel">تعداد دانشجویان&nbsp&nbsp</label><br/>
+          <input id="endminute" style="width: 60px;" class="form-control" type="text" value="0" min="0" max="100" />
+        </div> 
+       <div id="myDangerAlert" class="alert alert-danger fade in" style="margin: 20px 0px; width: 100%; text-align:center;">
+              <strong>توجه:</strong> ابتدا درس را انتخاب نمایید.
+      </div>     
+</div>    
+   
+    
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+    <div class="table-responsive myTable">          
+        <table class="table" id="studentsTable">
+        <thead>
+        <tr>
+          <th></th>
+          <th>شماره دانشجویی</th>
+          <th>نام</th>
+          <th>نام خانوادگی</th>
+          <th>رشته</th>
+          <th>نمره</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        
+        </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center" style="bottom: 0">
+<a href="#" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <div class="container">
+            <div class="row">
+                
+                <nav class="col-sm-12">
+                    <h5>دانشگاه شهید بهشتی - دانشکده علوم و مهندسی کامپیوتر</h5>
+                </nav>           
+            </div> <!--/.row--> 
+  </div> <!--/.container--> </footer>
+
+</body>
+</html>
+
