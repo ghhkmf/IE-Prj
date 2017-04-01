@@ -7,6 +7,8 @@
     else if(localStorage.getItem("type") == "m")
     {
       $(".dropdown").hide(); 
+
+      $(".masterHide").hide();
     }
    });
     function signout()
