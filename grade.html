@@ -21,7 +21,9 @@
  <link rel="stylesheet" href="css/fontStyle.css">
  <link rel="stylesheet" href="css/myStyles.css">
 
-  <script src="js/redirect.js"></script>
+    <script src="js/redirect.js"></script>
+    <script src="js/gp-m.js"></script>
+
 
 </head>
 <body>
@@ -51,7 +53,7 @@
     </div>
     </ul>
      <ul class="nav navbar-nav">
-        <li><a href="login.html">خروج <span class="glyphicon glyphicon-log-in"></span> </a></li>
+        <li><a onclick="signout()">خروج <span class="glyphicon glyphicon-log-in"></span> </a></li>
         <li><a href="edit-info.html">حساب کاربری <span class="glyphicon glyphicon-user"></span></a></li>
       </ul>
   </div>
@@ -90,7 +92,7 @@
     <div class="col-sm-8 col-sm-pull-4 col-md-8 col-md-pull-4 col-lg-8 col-lg-pull-4">
       <div style="display: inline-flex; margin: 10px 0px;">
       <label class="myLabel">تاریخ امتحان&nbsp&nbsp</label><br/>
-      <input id="examDay" style="width: 60px;" class="form-control" type="text" value="1" min="1" max="31" />&nbsp.&nbsp
+      <input id="examDay" style="width: 60px;" class="form-control" type="text" value="1" min="1" max="31"/>&nbsp.&nbsp
       <input id="examMonth" style="width: 60px;" class="form-control" type="text" value="1" min="1" max="12" />&nbsp.&nbsp
       <input id="examYear" style="width: 70px;" class="form-control" type="text" value="1395" min="1395" max="1450"/>
       </div>
