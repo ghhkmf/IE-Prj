@@ -17,9 +17,8 @@
   <link rel="stylesheet" href="css/fontStyle.css">
   <link rel="stylesheet" type="text/css" href="css/myStyles.css">
 
-  <script src="js/redirect.js"></script>
   <script src="js/table.js"></script>
-
+  <script src="js/gp-m.js"></script>
 
 
 
@@ -48,13 +47,13 @@
       <li><a href="grade.html">اعلام نمره</a></li>
       <li><a href="studentslist.html">لیست دانشجویان کلاس ها</a></li>
 
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">ترم<span class="caret"></span></a>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">ترم<span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#" style="float: right;">تعریف ترم</a></li>
-          <li><a href="#" style="float: right;">ویرایش اطلاعات ترم</a></li>
+          <li><a href="add-term.html" style="float: right;">تعریف ترم</a></li>
+          <li><a href="edit-term.html" style="float: right;">ویرایش اطلاعات ترم</a></li>
         </ul>
       </li>
-       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">درس ها<span class="caret"></span></a>
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">درس ها<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="add-course.html" style="float: right;">تعریف درس</a></li>
           <li><a href="edit-course.html" style="float: right;">مشاهده و ویرایش اطلاعات درس</a></li>
@@ -67,7 +66,7 @@
     </div>
     </ul>
      <ul class="nav navbar-nav">
-        <li><a onclick="gotologinpage()">خروج <span class="glyphicon glyphicon-log-in"></span> </a></li>
+        <li><a onclick="signout()">خروج <span class="glyphicon glyphicon-log-in"></span> </a></li>
         <li class="active"><a href="#">حساب کاربری <span class="glyphicon glyphicon-user"></span></a></li>
       </ul>
   </div>
@@ -191,12 +190,12 @@
       {
         if(localStorage.type == "gp")
           window.location = "manager.html";
+        else if(localStorage.type=="m")
+        {
+
+        }
       }
-       function gotologinpage()
-      {
-        localStorage.removeItem("type");
-        window.location = "login.html";
-      }
+      
       function addphone()
       {
         var phoneno = document.getElementById("phoneInput");
@@ -222,5 +221,7 @@
       remove.appendChild(removeB);
       }
     }
+
+
     </script>
 
