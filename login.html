@@ -9,7 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/fontStyle.css" rel="stylesheet">
@@ -141,18 +142,31 @@ div.slide-down h4 {
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
-        $(window).load(function() {
-          localStorage.removeItem("type");
-    });
         function signIn()
         {
             var email = $( "#inputEmail");
             var password = $( "#inputPassword");
 
-            if(email.val() == "gp@sbu.ac.ir" && password.val()=="gp")
+            if((email.val() == "gp@sbu.ac.ir") && (password.val()=="gp"))
             {
-                window.location = 'manager.html';
+                do{
                 localStorage.setItem("type", "gp");
+                }
+                while(localStorage.getItem("type") != "gp");
+                
+                window.location.replace("manager.html");
+                
+            }
+            else if(email.val() == "m@sbu.ac.ir" && password.val()=="m")
+            {
+
+                do{
+                    localStorage.setItem("type", "m");
+                }
+                while(localStorage.getItem("type") != "m");
+                
+                window.location.replace("manager.html");
+                
             }
             else
             {
