@@ -33,7 +33,7 @@
       <li><a href="grade.html">اعلام نمره</a></li>
 
       <li class="active"><a>لیست دانشجویان کلاس ها</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">ترم<span class="caret"></span></a>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">ترم<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="add-term.html" style="float: right;">تعریف ترم</a></li>
           <li><a href="edit-term.html" style="float: right;">ویرایش اطلاعات ترم</a></li>
@@ -45,7 +45,7 @@
           <li><a href="edit-course.html" style="float: right;">مشاهده و ویرایش اطلاعات درس</a></li>
         </ul>
       </li>
-      <li class=""><a href="#">صفحه اصلی</a></li>
+      <li class=""><a href="manager.html">صفحه اصلی</a></li>
 
       <div class="navbar-header">
       <a class="navbar-brand">پورتال دانشجویان دانشکده علوم و مهندسی کامپیوتر</a>
@@ -62,7 +62,7 @@
   <div class="row">
     <div class="col-lg-4 col-lg-push-8 col-md-4 col-md-push-8 col-sm-4 col-sm-push-8">
       <form>
-        <div class="form-group" style="padding-top: 10px;">
+        <div class="form-group masterHide" style="padding-top: 10px;">
           <span>
             <label><input type="radio" name="courseMaster" checked=""> &nbspدرس های من&nbsp&nbsp</label>
             <label><input type="radio" name="courseMaster"> &nbspکلیه درس ها&nbsp&nbsp</label>
@@ -89,8 +89,8 @@
             <option>۲</option>
             <option>۳</option>
           </select>
-          <label class="myLabel">نام استاد</label>
-          <select class="form-control myInput" id="selMaster">
+          <label class="myLabel masterHide">نام استاد</label>
+          <select class="form-control myInput masterHide" id="selMaster">
             <option value="none">-- نام استاد --</option>
             <option>دکتر علی اکبری</option>
             <option>دکتر قوامی زارده</option>
