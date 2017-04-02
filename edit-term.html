@@ -27,31 +27,41 @@
 <body>
 
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">   
+  <div class="container-fluid"> 
+   <div class="navbar-header" style="float: right;">
+        <a class="navbar-brand">پورتال دانشجویان دانشکده علوم و مهندسی کامپیوتر</a>
+        <button style="float: right;" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>  
+    <div class="collapse navbar-collapse" id="myNavbar">
+
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="grade.html">اعلام نمره</a></li>
-      <li><a href="studentslist.html">لیست دانشجویان کلاس ها</a></li>      <li class="dropdown active"><a class="dropdown-toggle" data-toggle="dropdown">ترم<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="add-term.html" style="float: right;">تعریف ترم</a></li>
-          <li class="active"><a style="float: right;">ویرایش اطلاعات ترم</a></li>
-        </ul>
-      </li>
-       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">درس ها<span class="caret"></span></a>
+      <li style="float: right;"><a href="manager.html">صفحه اصلی</a></li>
+      <li class="dropdown" style="float: right;"><a class="dropdown-toggle" data-toggle="dropdown">درس ها<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="add-course.html" style="float: right;">تعریف درس</a></li>
           <li><a href="edit-course.html" style="float: right;">مشاهده و ویرایش اطلاعات درس</a></li>
         </ul>
       </li>
-      <li class=""><a href="manager.html">صفحه اصلی</a></li>
+      <li class="dropdown active" style="float: right;"><a class="dropdown-toggle" data-toggle="dropdown">ترم<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li style="float: right;"><a href="add-term.html">تعریف ترم</a></li>
+          <li class="active" style="float: right;"><a>ویرایش اطلاعات ترم</a></li>
+        </ul>
+      </li>
+      <li style="float: right;"><a href="studentslist.html">لیست دانشجویان کلاس ها</a></li>
+      <li style="float: right;"><a href="grade.html">اعلام نمره</a></li>
 
-      <div class="navbar-header">
-      <a class="navbar-brand">پورتال دانشجویان دانشکده علوم و مهندسی کامپیوتر</a>
-    </div>
+      
     </ul>
      <ul class="nav navbar-nav">
-        <li><a onclick="signout()">خروج <span class="glyphicon glyphicon-log-in"></span> </a></li>
-        <li><a href="edit-info.html">حساب کاربری <span class="glyphicon glyphicon-user"></span></a></li>
-      </ul>
+        <li style="float: right;"><a href="edit-info.html">حساب کاربری <span class="glyphicon glyphicon-user"></span></a></li>
+        <li style="float: right;"><a onclick="signout()">خروج <span class="glyphicon glyphicon-log-in"></span> </a></li>
+    </ul>
+    </div>
   </div>
 </nav> 
 
