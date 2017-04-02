@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+ <title>صفحه اصلی دانشجو</title>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+  <script type='text/javascript'
+  src='http://code.jquery.com/jquery-1.10.1.js'></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+<link rel="stylesheet" type="text/css"
+  href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/fontStyle.css">
+
+<link rel="stylesheet" type="text/css"
+  href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="css/myStyles.css">
+
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+<div class="navbar-header" style="float: right;">
+    <!--<li style="float: right";><img src="img/Logo.png" width="40px" height="40px"></li>-->
+
+        <a class="navbar-brand">پورتال دانشجویان دانشکده علوم و مهندسی کامپیوتر</a>
+        <button style="float: right;" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">   
+    <ul class="nav navbar-nav navbar-right">
+      <li style="float: right;" class="active"><a href="">صفحه اصلی</a></li>
+      <li style="float: right;"><a href="">ترم های پیشین</a></li>
+      <li style="float: right;"><a href="">ثبت نام ترم جدید</a></li>
+
+    </ul>
+     <ul class="nav navbar-nav">
+        <li style="float: right;"><a href="edit-info.html">حساب کاربری <span class="glyphicon glyphicon-user"></span></a></li>
+        <li style="float: right;"><a onclick="signout()">خروج <span class="glyphicon glyphicon-log-in"></span> </a></li>
+      </ul>
+    </div>
+  </div>
+</nav> 
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12" align="center">
+      <div class="table-responsive myTable">          
+        <table class="table" id="termTable">
+        <thead>
+        <tr>
+          <th>ردیف</th>
+          <th>شماره درس</th>
+          <th>عنوان</th>
+          <th>استاد ارائه دهنده</th>
+          <th>تعداد واحد</th>
+          <th>نوع درس</th>
+          <th>زمان برگزاری</th>
+          <th>نمره</th>
+          <th>وضعیت</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr>
+          <td>1</td>
+           <td>4311001</td>
+            <td>مهندسی اینترنت</td>
+            <td>دکتر علی اکبری</td>
+            <td>۳</td>
+            <td>اصلی</td>
+            <td>شنبه-دوشنبه۹:۰۰ تا ۱۰:۳۰</td>
+            <td>-</td>
+            <td>اعلام نشده</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>4311303</td>
+            <td>مهندسی نرم افزار ۱</td>
+            <td>دکتر شاملی</td>
+            <td>۳</td>
+            <td>اصلی</td>
+            <td>شنبه-دوشنبه 10:30 تا 12:00</td>
+             <td>-</td>
+            <td>اعلام نشده</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>4311501</td>
+            <td>پایگاه داده ها</td>
+            <td>دکتر نشاطی</td>
+            <td>۳</td>
+            <td>اصلی</td>
+            <td>شنبه-چهارشنبه 14:00 تا 15:30</td>
+            <td>-</td>
+            <td>اعلام نشده</td>
+          </tr>
+          <tr>
+          <th></th>
+          <th>تعداد واحد های ترم جاری: 9</th>
+          <th>اعلام شده: 0</th>
+          <th>قبولی: -</th>
+          <th>وضعیت مشروطی: -</th>
+          <th></th>
+          <th></th>
+          <th>معدل ترم: - </th>
+          <th>معدل کل: 15.48</th>
+        </tr>
+        </tbody>
+        </table>
+      </div>
+       
+<footer class="container-fluid text-center" id="footer">
+<a href="#" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <div class="container">
+            <div class="row">
+                
+                <nav class="col-sm-12">
+                    <h5>دانشگاه شهید بهشتی - دانشکده علوم و مهندسی کامپیوتر</h5>
+                </nav>           
+            </div> <!--/.row--> 
+  </div> <!--/.container--> </footer>
+
+</body>
+</html>
+
