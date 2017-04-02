@@ -28,39 +28,49 @@
 <body>
 
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">   
+  <div class="container-fluid">
+    <div class="navbar-header" style="float: right;">
+        <a class="navbar-brand">پورتال دانشجویان دانشکده علوم و مهندسی کامپیوتر</a>
+        <button style="float: right;" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>   
+    <div class="collapse navbar-collapse" id="myNavbar">
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="grade.html">اعلام نمره</a></li>
+        <li style="float: right;"><a href="manager.html">صفحه اصلی</a></li>
+        <li class="dropdown" style="float: right;"><a class="dropdown-toggle" data-toggle="dropdown"">درس ها<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="add-course.html" style="float: right;">تعریف درس</a></li>
 
-      <li class="active"><a>لیست دانشجویان کلاس ها</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">ترم<span class="caret"></span></a>
+          <li><a href="edit-course.html" style="float: right;">مشاهده و ویرایش اطلاعات درس</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown" style="float: right;"><a class="dropdown-toggle" data-toggle="dropdown">ترم<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="add-term.html" style="float: right;">تعریف ترم</a></li>
           <li><a href="edit-term.html" style="float: right;">ویرایش اطلاعات ترم</a></li>
         </ul>
       </li>
-       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"">درس ها<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="add-course.html" style="float: right;">تعریف درس</a></li>
-          <li><a href="edit-course.html" style="float: right;">مشاهده و ویرایش اطلاعات درس</a></li>
-        </ul>
-      </li>
-      <li class=""><a href="manager.html">صفحه اصلی</a></li>
+       
+      <li class="active" style="float: right;"><a>لیست دانشجویان کلاس ها</a></li>
+      <li style="float: right;"><a href="grade.html">اعلام نمره</a></li>
 
-      <div class="navbar-header">
-      <a class="navbar-brand">پورتال دانشجویان دانشکده علوم و مهندسی کامپیوتر</a>
-    </div>
+
     </ul>
      <ul class="nav navbar-nav">
-        <li><a onclick="signout()">خروج <span class="glyphicon glyphicon-log-in"></span> </a></li>
-        <li><a href="edit-info.html">حساب کاربری <span class="glyphicon glyphicon-user"></span></a></li>
+        <li style="float: right;"><a href="edit-info.html">حساب کاربری <span class="glyphicon glyphicon-user"></span></a></li>
+        <li style="float: right;"><a onclick="signout()">خروج <span class="glyphicon glyphicon-log-in"></span> </a></li>
       </ul>
+      </div>
   </div>
 </nav> 
 
 <div class="container-fluid main">
   <div class="row">
-    <div class="col-lg-4 col-lg-push-8 col-md-4 col-md-push-8 col-sm-4 col-sm-push-8">
+    <div class="col-lg-4 col-lg-push-8 col-md-4 col-md-push-8 col-sm-4 col-sm-push-8" align="center">
       <form>
         <div class="form-group masterHide" style="padding-top: 10px;">
           <span>
@@ -83,76 +93,57 @@
             <option>مهندسی نرم افزار ۱</option>
           </select>       
           <label class="myLabel">گروه</label>
-          <select class="form-control myInput" id="selMaster">
+          <select class="form-control myInput" id="selGroupName">
             <option value="none">-- گروه --</option>
             <option>۱</option>
             <option>۲</option>
             <option>۳</option>
           </select>
           <label class="myLabel masterHide">نام استاد</label>
-          <select class="form-control myInput masterHide" id="selMaster">
+          <select class="form-control myInput masterHide" id="selMasterName">
             <option value="none">-- نام استاد --</option>
             <option>دکتر علی اکبری</option>
             <option>دکتر قوامی زارده</option>
             <option>دکتر عباسپور</option>
           </select>
+          <button style="margin: 25px 0;" type="button" class="btn" id="searchCourse" onclick="search()">نمایش اطلاعات و لیست دانشجویان درس</button>   
+          <div id="myDangerAlert" class="alert alert-danger fade in" style="margin: 20px 0px; width: 100%; text-align:center;">
+              <strong>توجه:</strong> ابتدا درس را انتخاب نمایید.
+          </div>      
         </div>
       </form> 
     </div>
     <div class="col-sm-8 col-sm-pull-4 col-md-8 col-md-pull-4 col-lg-8 col-lg-pull-4">
-      <div style="display: inline-flex; margin: 10px 0px;">
-      <label class="myLabel">تاریخ امتحان&nbsp&nbsp</label><br/>
-      <input id="examDay" style="width: 60px;" class="form-control" type="text" value="1" min="1" max="31" />&nbsp.&nbsp
-      <input id="examMonth" style="width: 60px;" class="form-control" type="text" value="1" min="1" max="12" />&nbsp.&nbsp
-      <input id="examYear" style="width: 70px;" class="form-control" type="text" value="1395" min="1395" max="1450"/>
-      </div>
-      <div>
+      <div class="form-group" id="courseInfo">
         <div style="display: inline-flex; margin: 10px 0px;">
-          <label class="myLabel">ساعت امتحان&nbsp&nbsp</label><br/>
-          <input id="examMiunte" style="width: 60px;" class="form-control" type="text" value="0" min="00" max="59" />&nbsp:&nbsp
-          <input id="examHour" style="width: 60px;" class="form-control" type="text" value="6" min="6" max="20" />&nbsp&nbsp
+          <label class="myLabel">تاریخ امتحان&nbsp&nbsp</label><br/>
+          <p class="form-control-static">۱۳۹۶/۳/۲۷</p>
         </div>
-      </div> 
-      
-      <label class="myLabel">روزهای کلاس</label>
-      <div>
-        <div class="checkbox-inline">
-          <label class="myLabel" for="satVal"><input id="sat" type="checkbox" value="">&nbsp&nbsp&nbsp&nbspشنبه</label>
-        </div>
-
-        <div class="checkbox-inline">
-          <label class="myLabel" for="sunVal"><input id="sun" type="checkbox" value="">&nbsp&nbsp&nbsp&nbspیکشنبه</label>
-        </div>
-        <div class="checkbox-inline">
-          <label class="myLabel" for="monVal"><input id="mon" type="checkbox" value="">&nbsp&nbsp&nbsp&nbspدوشنبه</label>
-        </div>
-      </div>
-      <div class="checkbox-inline">
-        <label class="myLabel" for="tueVal"><input id="tue" type="checkbox" value="">&nbsp&nbsp&nbsp&nbspسه شنبه</label>
-      </div>
-      <div class="checkbox-inline">
-         <label class="myLabel" for="wedVal"><input id="wed" type="checkbox" value="">&nbsp&nbsp&nbsp&nbspچهارشنبه</label>
-      </div>
-      <div>
-        <div style="display: inline-flex; margin: 10px 0px;">
-          <label class="myLabel">شروع&nbsp&nbsp</label><br/>
-          <input id="startminute" style="width: 60px;" class="form-control" type="text" value="00" min="00" max="59" />&nbsp:
-          &nbsp
-          <input id="starthour" style="width: 60px;" class="form-control" type="text" value="6" min="6" max="20" />&nbsp&nbsp
-        </div>
-        <div style="display: inline-flex;">
-        <label class="myLabel">پایان&nbsp&nbsp</label><br/>
-          <input id="endminute" style="width: 60px;" class="form-control" type="text" value="00" min="00" max="59" />&nbsp:&nbsp
-          <input id="endhour" style="width: 60px;" class="form-control" type="text" value="6" min="6" max="20" />&nbsp&nbsp
-        </div>
-      </div>
-       <div style="display: inline-flex;">
-        <label class="myLabel">تعداد دانشجویان&nbsp&nbsp</label><br/>
-          <input id="endminute" style="width: 60px;" class="form-control" type="text" value="0" min="0" max="100" />
+        <div>
+          <div style="display: inline-flex; margin: 10px 0px;">
+            <label class="myLabel">ساعت امتحان&nbsp&nbsp</label><br/>
+            <p class="form-control-static">۹:۰۰ تا ۱۲:۰۰</p>
+          </div>
         </div> 
-       <div id="myDangerAlert" class="alert alert-danger fade in" style="margin: 20px 0px; width: 100%; text-align:center;">
-              <strong>توجه:</strong> ابتدا درس را انتخاب نمایید.
-      </div>     
+        <div>
+          <div style="display: inline-flex; margin: 10px 0px;">
+            <label class="myLabel">روزهای کلاس&nbsp&nbsp</label><br/>
+            <p class="form-control-static">شنبه - دوشنبه</p>
+          </div>
+        </div>
+        <div>
+          <div style="display: inline-flex; margin: 10px 0px;">
+            <label class="myLabel">ساعت کلاس&nbsp&nbsp</label><br/>
+            <p class="form-control-static">۱۰:۳۰ تا ۱۲:۰۰</p>
+          </div>
+        </div>
+        <div>
+          <div style="display: inline-flex; margin: 10px 0px;">
+            <label class="myLabel">تعداد دانشجویان&nbsp&nbsp</label><br/>
+            <p class="form-control-static">۴۰ نفر</p>
+          </div> 
+        </div>  
+      </div>
 </div>    
    
     
@@ -196,6 +187,47 @@
             </div> <!--/.row--> 
   </div> <!--/.container--> </footer>
 
+<script type="text/javascript">
+  $(window).load(function(){
+      var hideCourseInfo = document.getElementById("courseInfo");
+      hideCourseInfo.style.visibility="hidden";
+      var hideAlert = document.getElementById("myDangerAlert");
+      hideAlert.style.visibility="hidden";
+
+});
+  function search()
+  {
+    var courseName = $( "#selCourseName option:selected");
+    var groupName = $( "#selGroupName option:selected");
+    var masterName = $( "#selMasterName option:selected");
+    var termName = $( "#term option:selected");
+  
+
+    if(courseName.val() != "none" && groupName.val() != "none" && termName.val()!="none") 
+    {
+      if(localStorage.getItem("type") == "gp")
+      {
+        if(masterName.val()!="none")
+        {
+         var hideCourseInfo = document.getElementById("courseInfo");
+          hideCourseInfo.style.visibility="visible";
+        }
+      }
+      else
+      {
+        var hideCourseInfo = document.getElementById("courseInfo");
+         hideCourseInfo.style.visibility="visible";
+      }
+     
+
+    }
+    else
+    {
+      var hideAlert = document.getElementById("myDangerAlert");
+      hideAlert.style.visibility="visible";
+    }
+  }
+</script>
 </body>
 </html>
 
