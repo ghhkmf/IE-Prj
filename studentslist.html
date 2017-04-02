@@ -62,7 +62,7 @@
     </ul>
      <ul class="nav navbar-nav">
         <li style="float: right;"><a href="edit-info.html">حساب کاربری <span class="glyphicon glyphicon-user"></span></a></li>
-        <li style="float: right;"><a onclick="signout()">خروج <span class="glyphicon glyphicon-log-in"></span> </a></li>
+        <li style="float: right;"><a onclick="signout()">خروج <span class="glyphicon glyphicon-log-out"></span> </a></li>
       </ul>
       </div>
   </div>
@@ -73,10 +73,11 @@
     <div class="col-lg-4 col-lg-push-8 col-md-4 col-md-push-8 col-sm-4 col-sm-push-8" align="center">
       <form>
         <div class="form-group masterHide" style="padding-top: 10px;">
-          <span>
-            <label><input type="radio" name="courseMaster" checked=""> &nbspدرس های من&nbsp&nbsp</label>
-            <label><input type="radio" name="courseMaster"> &nbspکلیه درس ها&nbsp&nbsp</label>
-            </span>
+            <label>انتخاب درس</label>
+            <select id="myCourse" class="form-control myInput">
+            <option>درس های من</option>
+            <option>کلیه درس ها</option>
+          </select>
         </div>
         <div class="form-group">
           <label for="sel1" class="myLabel">شماره ترم</label>
@@ -106,15 +107,15 @@
             <option>دکتر قوامی زارده</option>
             <option>دکتر عباسپور</option>
           </select>
-          <button style="margin: 25px 0;" type="button" class="btn" id="searchCourse" onclick="search()">نمایش اطلاعات و لیست دانشجویان درس</button>   
-          <div id="myDangerAlert" class="alert alert-danger fade in" style="margin: 20px 0px; width: 100%; text-align:center;">
-              <strong>توجه:</strong> ابتدا درس را انتخاب نمایید.
-          </div>      
+          <button style="margin: 25px 0;" type="button" class="btn" id="searchCourse" onclick="search()">نمایش اطلاعات</button>   
         </div>
       </form> 
     </div>
     <div class="col-sm-8 col-sm-pull-4 col-md-8 col-md-pull-4 col-lg-8 col-lg-pull-4">
-      <div class="form-group" id="courseInfo">
+      <div id="myDangerAlert" class="alert alert-danger fade in" style="margin: 20px 0px; width: 50%; text-align:center;">
+              <strong>توجه:</strong> ابتدا درس را انتخاب نمایید.
+          </div>    
+      <div class="form-group" id="courseInfo">  
         <div style="display: inline-flex; margin: 10px 0px;">
           <label class="myLabel">تاریخ امتحان&nbsp&nbsp</label><br/>
           <p class="form-control-static">۱۳۹۶/۳/۲۷</p>
@@ -191,8 +192,7 @@
   $(window).load(function(){
       var hideCourseInfo = document.getElementById("courseInfo");
       hideCourseInfo.style.visibility="hidden";
-      var hideAlert = document.getElementById("myDangerAlert");
-      hideAlert.style.visibility="hidden";
+      $("#myDangerAlert").hide();
 
 });
   function search()
@@ -212,6 +212,12 @@
          var hideCourseInfo = document.getElementById("courseInfo");
           hideCourseInfo.style.visibility="visible";
         }
+        else
+        {
+          $("#myDangerAlert").show();
+          var hideCourseInfo = document.getElementById("courseInfo");
+          hideCourseInfo.style.visibility="hidden";
+        }
       }
       else
       {
@@ -223,8 +229,9 @@
     }
     else
     {
-      var hideAlert = document.getElementById("myDangerAlert");
-      hideAlert.style.visibility="visible";
+            $("#myDangerAlert").show();
+         var hideCourseInfo = document.getElementById("courseInfo");
+         hideCourseInfo.style.visibility="hidden";
     }
   }
 </script>
