@@ -168,7 +168,17 @@ div.slide-down h4 {
                 window.location.replace("manager.html");
                 
             }
-            else
+            else if(email.val() == "s@sbu.ac.ir" && password.val()=="s")
+            {
+
+                do{
+                    localStorage.setItem("type", "s");
+                }
+                while(localStorage.getItem("type") != "s");
+                
+                window.location.replace("Current_Term.html");
+            }
+            else 
             {
                 email.addClass("errorClass");
                 password.addClass("errorClass");
