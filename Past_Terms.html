@@ -21,7 +21,10 @@
     <script src="js/redirect.js"></script>
 
 
+<style type="text/css">
+  .highlight { background-color: #FFFFD9; }
 
+</style>
 </head>
 <body>
 
@@ -55,8 +58,11 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-12" align="center">
+      <div id="myWarningAlert" class="alert alert-warning fade in" style="margin: 20px 0px; width: 50%; text-align:center;">
+              <strong>توجه:</strong> با انتخاب یکی از سطرهای جدول می توانید جزییات آن ترم را مشاهده نمایید.
+          </div>    
       <div class="table-responsive myTable">          
-        <table class="table" id="termTable">
+        <table class="table table-hover" id="termTable">
         <thead>
         <tr>
           <th>ترم</th>
@@ -118,7 +124,79 @@
         </tbody>
         </table>
       </div>
-      ::after
+      
+      <div class="table-responsive myTable">          
+        <table class="table table-hover" id="selectedTermCourses">
+        <thead>
+        <tr>
+          <th></th>
+          <th>نام درس</th>                    
+          <th>تعداد واحد</th>
+          <th>گروه درس</th>
+          <th>نوع درس</th>
+          <th>نام استاد</th>
+          <th>نمره</th>
+          <th>وضعیت قبولی</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>۱</td>
+            <td>سیستم عامل</td>           
+            <td>۳</td>           
+            <td>۱</td>           
+            <td>اصلی</td>
+            <td>دکتر ابراهیمی مقدم</td>    
+            <td>17.78</td>
+            <td>قبول</td>
+          </tr>
+          <tr>
+            <td>۲</td>
+            <td>سیستم عامل</td>           
+            <td>۳</td>           
+            <td>۱</td>           
+            <td>اصلی</td>
+            <td>دکتر ابراهیمی مقدم</td>    
+            <td>17.78</td>
+            <td>قبول</td>
+          </tr>
+          <tr>
+            <td>۳</td>
+            <td>سیستم عامل</td>           
+            <td>۳</td>           
+            <td>۱</td>           
+            <td>اصلی</td>
+            <td>دکتر ابراهیمی مقدم</td>    
+            <td>17.78</td>
+            <td>قبول</td>
+          </tr>
+          <tr>
+            <td>۴</td>
+            <td>سیستم عامل</td>           
+            <td>۳</td>           
+            <td>۱</td>           
+            <td>اصلی</td>
+            <td>دکتر ابراهیمی مقدم</td>    
+            <td>17.78</td>
+            <td>قبول</td>
+          </tr>
+          <tr>
+           <td>۵</td>
+            <td>سیستم عامل</td>           
+            <td>۳</td>           
+            <td>۱</td>           
+            <td>اصلی</td>
+            <td>دکتر ابراهیمی مقدم</td>    
+            <td>17.78</td>
+            <td>قبول</td>
+          </tr>
+        </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
 <footer class="container-fluid text-center" id="footer">
 <a href="#" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
@@ -131,7 +209,23 @@
                 </nav>           
             </div> <!--/.row--> 
   </div> <!--/.container--> </footer>
+<script type="text/javascript">
+$(window).load(function()
+{
+  document.getElementById("selectedTermCourses").style.visibility = "hidden";
+});
 
+ $("#termTable tr").click(function() {
+    var selected = $(this).hasClass("highlight");
+    $("#termTable tr").removeClass("highlight");
+    if(!selected)
+    {
+      $(this).addClass("highlight");
+      document.getElementById("selectedTermCourses").style.visibility = "visible";
+    }
+});
+
+</script>
 </body>
 </html>
 
