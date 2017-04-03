@@ -1,6 +1,13 @@
 *{
   font-family: "BNazanin";
+
+
 }
+button{
+	 background-color: #3399FF;
+    color: white;
+}
+
   @font-face {
   font-family: 'BNazanin';
   src: url('BNazanin.eot');
