@@ -20,7 +20,14 @@
   <link rel="stylesheet" type="text/css" href="css/myStyles.css">
   <script src="js/redirect.js"></script>
 
-
+<style type="text/css">
+  p{
+    margin-right: 10px;
+  }
+  .myLabel{
+    width: 130px;
+  }
+</style>
 
 </head>
 <body>
@@ -54,9 +61,74 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-12" align="center">
+    <div class="col-sm-4 col-sm-push-8">
+        <div style="display: inline-flex; margin: 10px 0px;">
+          <label class="myLabel">نام</label><br/>
+          <p class="form-control-static">علی</p>
+        </div>
+        <div>
+          <div style="display: inline-flex; margin: 10px 0px;">
+            <label class="myLabel">ساعت امتحان</label><br/>
+            <p class="form-control-static">احمدی</p>
+          </div>
+        </div> 
+        <div>
+          <div style="display: inline-flex; margin: 10px 0px;">
+            <label class="myLabel">جنسیت</label><br/>
+            <p class="form-control-static">مرد</p>
+          </div>
+        </div>
+        <div>
+          <div style="display: inline-flex; margin: 10px 0px;">
+            <label class="myLabel">تاریخ تولد</label><br/>
+            <p class="form-control-static">۱۳۷۶.۱.۱</p>
+          </div>
+        </div> 
+        <div>
+          <div style="display: inline-flex; margin: 10px 0px;">
+            <label class="myLabel">تعداد واحد گذارانده شده</label><br/>
+            <p class="form-control-static">۱۰۰</p>
+          </div>
+        </div> 
+    </div>
+ 
+    <div class="col-sm-4">
+    <div style="display: inline-flex; margin: 10px 0px;">
+          <label class="myLabel">رشته</label><br/>
+          <p class="form-control-static">مهندسی کامپیوتر</p>
+        </div>
+        <div>
+          <div style="display: inline-flex; margin: 10px 0px;">
+            <label class="myLabel">گرایش</label><br/>
+            <p class="form-control-static">نرم افزار</p>
+          </div>
+        </div> 
+        <div>
+          <div style="display: inline-flex; margin: 10px 0px;">
+            <label class="myLabel">سال ورود به دانشگاه</label><br/>
+            <p class="form-control-static">۱۳۹۵</p>
+          </div>
+        </div>
+        <div>
+          <div style="display: inline-flex; margin: 10px 0px;">
+            <label class="myLabel">نوع سهمیه</label><br/>
+            <p class="form-control-static">عادی</p>
+          </div>
+        </div>
+        <div>
+          <div style="display: inline-flex; margin: 10px 0px;">
+            <label class="myLabel">مشروطی متوالی</label><br/>
+            <p class="form-control-static">۰</p>
+          </div>
+        </div> 
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
       <div class="table-responsive myTable">          
-        <table class="table" id="termTable">
+        <table class="table">
         <thead>
         <tr>
           <th>ردیف</th>
@@ -118,7 +190,9 @@
         </tbody>
         </table>
       </div>
-       
+    </div>
+  </div>
+</div>
 <footer class="container-fluid text-center" id="footer">
 <a href="#" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
