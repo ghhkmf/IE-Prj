@@ -7,3 +7,11 @@
     }
    
    });
+     function signout()
+  {
+     if(localStorage.getItem("type") != null)
+            {
+                localStorage.removeItem("type");
+            }
+      window.location.replace("login.html");
+  }
