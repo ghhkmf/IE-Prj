@@ -67,8 +67,8 @@
           <li><a href="edit-term.html" style="float: right;">ویرایش اطلاعات ترم</a></li>
         </ul>
       </li>
-      <li style="float: right;"><a href="studentslist.html">لیست دانشجویان کلاس ها</a></li>
-      <li style="float: right;"><a href="grade.html">اعلام نمره</a></li>
+      <li style="float: right;"><a id="changeStdListToResult" href="studentslist.html">لیست دانشجویان کلاس ها</a></li>
+      <li style="float: right;"><a id="changeStdListToRegister" href="grade.html">اعلام نمره</a></li>
     </ul>
      <ul class="nav navbar-nav">
         <li class="active" style="float: right;"><a href="#">حساب کاربری <span class="glyphicon glyphicon-user"></span></a></li>
@@ -120,7 +120,7 @@
       </span>  
       <span>
             <label for="inputdefault" class="myLabel">پست الکترونیکی</label>
-            <input class="form-control myInput" id="inputdefault" type="text" value="۹۱۱۲۳۴۵۶">
+            <input class="form-control myInput" id="inputdefault" type="text" value="name@sbu.ac.ir">
        </span>  
        <span>
       <label class="myLabel">شماره تماس</label>
@@ -173,7 +173,7 @@
 </div>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-12" align="center">
       <button type="button" class="btn" id="addCourse">اعمال تغییرات</button>
     </div>
   </div>
@@ -196,13 +196,27 @@
 </body>
 </html>
  <script type="text/javascript">
+  $(window).load( function() {
+  if(localStorage.getItem("type") == "s")
+    {
+      $(".dropdown").hide(); 
+      $("#changeStdListToRegister").text("ثبت نام ترم جدید"); 
+      $("#changeStdListToResult").text("ترم های پیشین"); 
+      $("#changeStdListToRegister").attr("href" ,"register.html"); 
+      $("#changeStdListToResult").attr("href", "Past_Terms.html"); 
+    }
+   });
       function gotohomepage()
       {
         if(localStorage.type == "gp")
-          window.location = "manager.html";
+          window.location.replace("manager.html");
         else if(localStorage.type=="m")
         {
-
+          window.location.replace("manager.html");
+        }
+        else if(localStorage.type=="s")
+        {
+          window.location.replace("Current_Term.html");
         }
       }
       
